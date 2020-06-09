@@ -1,16 +1,16 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatIconModule } from "@angular/material/icon";
 
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatIconModule } from "@angular/material/icon";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatListModule } from "@angular/material/list";
+import { RepositoriesListComponent } from './repositories-list/repositories-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RepositoriesListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,7 +18,6 @@ import { MatListModule } from "@angular/material/list";
     MatIconModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

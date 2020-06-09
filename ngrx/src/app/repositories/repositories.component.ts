@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
+import { RepositorioService } from "./repositorio-service";
+
+interface Repository {
+  name: string;
+  descricao: string;
+}
 
 @Component({
   selector: "app-repositories",
@@ -7,10 +13,11 @@ import { Observable } from "rxjs";
   styleUrls: ["./repositories.component.scss"],
 })
 export class RepositoriesComponent implements OnInit {
-  repositories$: Observable<[]>;
-  constructor() {}
+  repos: Observable<[Repository]>;
+
+  constructor(private repositorioService: RepositorioService) {}
 
   ngOnInit(): void {
-    Observable.bind(["Boots", "Clogs", "Loafers", "Moccasins", "Sneakers"]);
+    this.repos = this.repositorioService.getRepos();
   }
 }
