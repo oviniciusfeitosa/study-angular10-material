@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatListModule } from "@angular/material/list";
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatIconModule,
     MatToolbarModule,
     FlexLayoutModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
