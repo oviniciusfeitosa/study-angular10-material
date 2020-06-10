@@ -7,10 +7,10 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { RepositoriesListComponent } from './repositories-list/repositories-list.component';
+import { GithubModule } from "./github/github.module";
 
 @NgModule({
-  declarations: [AppComponent, RepositoriesListComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +18,7 @@ import { RepositoriesListComponent } from './repositories-list/repositories-list
     MatIconModule,
     MatToolbarModule,
     FlexLayoutModule,
+    GithubModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
