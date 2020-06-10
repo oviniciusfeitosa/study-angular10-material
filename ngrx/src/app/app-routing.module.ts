@@ -4,7 +4,7 @@ import { AppComponent } from "./app.component";
 
 const routes: Routes = [
   {
-    path: "github",
+    path: "",
     loadChildren: () =>
       import("./github/github.module").then((m) => m.GithubModule),
   },

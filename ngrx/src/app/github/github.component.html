@@ -1,1 +1,14 @@
-<p>github works!</p>
+<mat-list role="list" *ngFor="let repo of repos$ | async">
+  <mat-list-item>
+    <strong>repo.id</strong>
+    <mat-chip color="primary" selected>{{ repo.id }}</mat-chip>
+  </mat-list-item>
+  <mat-list-item>
+    <strong>repo.full_name</strong>
+    <mat-chip color="primary" selected>{{ repo.full_name }}</mat-chip>
+  </mat-list-item>
+  <mat-list-item>
+    <strong>repo.private</strong>
+    <mat-chip color="primary" selected>{{ repo.private }}</mat-chip>
+  </mat-list-item>
+</mat-list>
