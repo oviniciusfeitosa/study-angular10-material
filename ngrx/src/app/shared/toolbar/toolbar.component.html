@@ -1,12 +1,9 @@
 <mat-toolbar color="primary" fxLayoutAlign="space-around center">
-  <span routerLink="/">Home</span>
-  <span routerLink="/github">My Repositories</span>
-  <span routerLink="/ngrx-counter">NgRx Counter</span>
+  <button mat-button fxFlex="10%" routerLink="/">Home</button>
+  <button mat-button fxFlex="20%" routerLink="/github">My Repositories</button>
+  <button mat-button fxFlex="10%" routerLink="/ngrx-counter">
+    NgRx Counter
+  </button>
   <span fxFlex></span>
-  <mat-icon
-    class="example-icon"
-    aria-hidden="false"
-    aria-label="Example user verified icon"
-    >verified_user</mat-icon
-  >
+  <mat-icon>verified_user</mat-icon>
 </mat-toolbar>
