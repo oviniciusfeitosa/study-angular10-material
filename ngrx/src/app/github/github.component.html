@@ -1,14 +1,10 @@
-<mat-list role="list" *ngFor="let repo of repos$ | async">
-  <mat-list-item>
-    <strong>repo.id</strong>
-    <mat-chip color="primary" selected>{{ repo.id }}</mat-chip>
-  </mat-list-item>
-  <mat-list-item>
-    <strong>repo.full_name</strong>
-    <mat-chip color="primary" selected>{{ repo.full_name }}</mat-chip>
-  </mat-list-item>
-  <mat-list-item>
-    <strong>repo.private</strong>
-    <mat-chip color="primary" selected>{{ repo.private }}</mat-chip>
-  </mat-list-item>
-</mat-list>
+<mat-card fxFlex>
+  <mat-list role="list" *ngFor="let repo of repos$ | async">
+    <mat-list-item>
+      <strong>Repository: </strong>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>{{ repo.full_name }}</mat-chip>
+      </mat-chip-list>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
