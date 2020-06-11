@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatIconModule } from "@angular/material/icon";
@@ -7,10 +8,17 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { GithubModule } from "./github/github.module";
-import { HttpClientModule } from "@angular/common/http";
+import { MyCounterComponent } from "./ng-rx-counter/my-counter/my-counter.component";
+import { HomeComponent } from "./shared/home/home.component";
+import { ToolbarComponent } from "./shared/toolbar/toolbar.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    MyCounterComponent,
+    HomeComponent,
+    ToolbarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
