@@ -1,9 +1,13 @@
 <mat-toolbar color="primary" fxLayoutAlign="space-around center">
-  <button mat-button fxFlex="10%" routerLink="/">Home</button>
-  <button mat-button fxFlex="20%" routerLink="/github">My Repositories</button>
-  <button mat-button fxFlex="10%" routerLink="/ngrx-counter">
-    NgRx Counter
-  </button>
+  <a mat-button routerLink="/">Home</a>
+  <a mat-button routerLink="/github">My Repositories</a>
+  <a mat-button routerLink="/ngrx-counter">
+    NgRx Store
+  </a>
+  <a mat-button routerLink="/ngrx-effect">
+    NgRx Effect
+  </a>
+
   <span fxFlex></span>
   <mat-icon>verified_user</mat-icon>
 </mat-toolbar>

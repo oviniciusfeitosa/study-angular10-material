@@ -19,6 +19,13 @@ const routes: Routes = [
         (m) => m.NgRxCounterModule
       ),
   },
+  {
+    path: "ngrx-effect",
+    loadChildren: () =>
+      import("./ng-rx-effect/ng-rx-effect.module").then(
+        (m) => m.NgRxEffectModule
+      ),
+  },
 ];
 
 @NgModule({
