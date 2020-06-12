@@ -12,6 +12,7 @@ import { GithubModule } from "./github/github.module";
 import { MyCounterComponent } from "./ng-rx-counter/my-counter/my-counter.component";
 import { HomeComponent } from "./shared/home/home.component";
 import { ToolbarComponent } from "./shared/toolbar/toolbar.component";
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ToolbarComponent } from "./shared/toolbar/toolbar.component";
     HttpClientModule,
     FlexLayoutModule,
     GithubModule,
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
