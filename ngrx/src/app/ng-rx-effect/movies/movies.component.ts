@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { MoviesService } from "./movies.service";
+import { Observable } from "rxjs";
+import { Store } from "@ngrx/store";
+
+interface Movie {
+  name: string;
+}
 
 @Component({
   selector: "app-movies",
@@ -7,10 +13,10 @@ import { MoviesService } from "./movies.service";
   styleUrls: ["./movies.component.scss"],
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[];
-  constructor(private movieService: MoviesService) {}
+  movies$: Observable<Movie[]> = this.store.select((state) => state.movies);
+  constructor(private store: Store<{ movies: Movie[] }>) {}
 
   ngOnInit() {
-    this.movieService.getAll().subscribe((movies) => (this.movies = movies));
+    this.store.dispatch({ type: "[Movies Page] Load Movies" });
   }
 }
