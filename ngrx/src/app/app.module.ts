@@ -13,6 +13,7 @@ import { MyCounterComponent } from "./ng-rx-counter/my-counter/my-counter.compon
 import { HomeComponent } from "./shared/home/home.component";
 import { ToolbarComponent } from "./shared/toolbar/toolbar.component";
 import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
 
 @NgModule({
   declarations: [
