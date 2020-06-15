@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { MoviesService } from "./movies.service";
 import { mergeMap, map, catchError } from "rxjs/operators";
-import { EMPTY } from "rxjs";
+import { EMPTY, of } from "rxjs";
 
 @Injectable()
 export class MoviesEffects {
@@ -15,7 +15,7 @@ export class MoviesEffects {
             type: "[Movies API] Movies Loaded Success",
             payload: movies,
           })),
-          catchError(() => EMPTY)
+          catchError(() => of({ type: "[Movies API] Movies Loaded Error" }))
         )
       )
     )
