@@ -10,7 +10,8 @@ import { NgRxEffectRoutingModule } from "./ng-rx-effect-routing.module";
   imports: [
     CommonModule,
     NgRxEffectRoutingModule,
-    StoreModule,
+    StoreModule.forRoot([]),
+    // EffectsModule.forRoot([])
     EffectsModule.forFeature([MoviesEffects]),
   ],
 })
