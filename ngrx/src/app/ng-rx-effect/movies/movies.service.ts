@@ -7,7 +7,10 @@ import { HttpClient } from "@angular/common/http";
 export class MoviesService {
   constructor(private http: HttpClient) {}
 
+  host: string = "http://api.tvmaze.com/search/shows";
+  term: string = "";
+
   getAll() {
-    return this.http.get("/movies");
+    return this.http.get(`${this.host}?q=${this.term}`);
   }
 }

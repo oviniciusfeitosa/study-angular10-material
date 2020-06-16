@@ -1,4 +1,6 @@
+<input matInput placeholder="Term" [formControl]="searchTearm" />
+<button mat-button (click)="(searchTearm)">Search</button>
+<p>Value: {{ searchTearm.value }}</p>
 <div *ngFor="let movie of movies$ | async">
   {{ movie.name }}
 </div>
->
