@@ -4,6 +4,9 @@ import { Store } from "@ngrx/store";
 import { MoviesComponent } from "./movies/movies.component";
 import { NgRxEffectRoutingModule } from "./ng-rx-effect-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
+import { MoviesService } from "./movies/movies.service";
+import { EffectsModule } from "@ngrx/effects";
+import { MovieEffects } from "./movies/movie.effects";
 
 @NgModule({
   declarations: [MoviesComponent],
@@ -11,8 +14,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     CommonModule,
     NgRxEffectRoutingModule,
     ReactiveFormsModule,
-    // EffectsModule.forFeature([MoviesEffects]),
+    EffectsModule.forFeature([MovieEffects]),
   ],
-  providers: [Store],
+  providers: [MoviesService],
 })
 export class NgRxEffectModule {}

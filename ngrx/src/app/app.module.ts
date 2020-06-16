@@ -16,6 +16,8 @@ import { MyCounterComponent } from "./ng-rx-counter/my-counter/my-counter.compon
 import { MovieEffects } from "./ng-rx-effect/movies/movie.effects";
 import { HomeComponent } from "./shared/home/home.component";
 import { ToolbarComponent } from "./shared/toolbar/toolbar.component";
+import { counterReducer } from "./ng-rx-counter/my-counter/counter.reducer";
+import { movieReducer } from "./ng-rx-effect/movies/movie.reducer";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { ToolbarComponent } from "./shared/toolbar/toolbar.component";
     HttpClientModule,
     FlexLayoutModule,
     GithubModule,
-    StoreModule.forRoot([]),
+    StoreModule.forRoot({ count: counterReducer, movies: movieReducer }),
     EffectsModule.forRoot([MovieEffects]),
   ],
   providers: [],

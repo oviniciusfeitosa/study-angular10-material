@@ -8,10 +8,6 @@ import { MoviesComponent } from "../ng-rx-effect/movies/movies.component";
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    NgRxCounterRoutingModule,
-    StoreModule.forRoot({ count: counterReducer }),
-  ],
+  imports: [CommonModule, NgRxCounterRoutingModule],
 })
 export class NgRxCounterModule {}

@@ -1,6 +1,8 @@
-<input matInput placeholder="Term" [formControl]="searchTearm" />
-<button mat-button (click)="(searchTearm)">Search</button>
-<p>Value: {{ searchTearm.value }}</p>
+<input matInput placeholder="Term" [formControl]="searchTerm" />
+<button mat-button (click)="searchMovie()">Search</button>
+<p>Value: {{ searchTerm.value }}</p>
+
+{{ movies$ | async }}
 <div *ngFor="let movie of movies$ | async">
-  {{ movie.name }}
+  {{ movie.show.name }}
 </div>

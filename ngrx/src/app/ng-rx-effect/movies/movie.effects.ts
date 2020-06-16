@@ -1,7 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { MoviesService } from "./movies.service";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import {
+  mergeMap,
+  map,
+  catchError,
+  switchMap,
+  exhaustMap,
+} from "rxjs/operators";
 import { EMPTY, of } from "rxjs";
 import {
   loadMoviesAction,
@@ -14,8 +20,8 @@ export class MovieEffects {
   loadMovies$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadMoviesAction),
-      mergeMap(() =>
-        this.moviesService.getAll().pipe(
+      exhaustMap(({ searchTerm }) =>
+        this.moviesService.getAll({ searchTerm }).pipe(
           map((payload) => loadedMoviesSuccessAction({ payload })),
           catchError((payload) => of(loadedMoviesErrorAction({ payload })))
         )
