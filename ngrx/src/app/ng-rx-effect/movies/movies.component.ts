@@ -13,7 +13,6 @@ import { IMovie } from "./imovie";
 })
 export class MoviesComponent implements OnInit {
   movies$: Observable<IMovie[]> = this.store.select((state) => {
-    console.log("aa:", state.movies);
     return state?.movies?.movies;
   });
 
@@ -32,6 +31,5 @@ export class MoviesComponent implements OnInit {
     this.store.dispatch(
       loadMoviesAction({ searchTerm: this.searchTerm.value })
     );
-    console.log(this.movies$.subscribe());
   }
 }
